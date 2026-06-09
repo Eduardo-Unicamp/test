@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="styles/reset.css"/>
+    <link rel="stylesheet" href="styles/global.css"/>
     <link rel="icon" type="image/png" href="resources/img_no_back.png"/>
+    <script src="index.js" defer></script>
     <title>My Page</title>
 </head>
 
@@ -22,7 +24,7 @@
                 <nav class="navbar">
                     <ul>
                         <li><a href="">Home</a></li>
-                        <li><a href="">Project</a></li>
+                        <li><a href="">Leituras</a></li>
                         <li><a href="">Socials</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>
@@ -31,11 +33,45 @@
             </div>
         </header>
         <main>
-            <section>
+            <section reading-form>
                 <div>
-            <h2 id="first-subtitle">Subtitle</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia porro eos, dicta, ducimus recusandae reiciendis nemo iure impedit autem velit cupiditate sit at perferendis ad soluta facere neque totam! Omnis!</p>
-        </div>
+                    <h2>Cadastre de leituras:</h2>
+                </div>
+                <form action="" method="POST" id="reading-form">
+
+                    <label for="token">token JWT: </label>
+                    <input type="text" name="token" id="token">
+
+                    <label for="currentPage"></label>
+                    <input type="number" id="currentPage" min="1" name="currentPage">
+
+                    <label for="readingStatus"></label>
+                    <select name="readingStatus" id="readingStatus">
+                        <option disabled value="none">--selecione uma opção</option>
+                        <option value="READ">Lido</option>
+                        <option value="READING">Lendo</option>
+                        <option value="TO_READ">A ler</option>
+                    </select>
+
+                    <label for="readingStartDate">Inicio da leitura:</label>
+                    <input type="date" id="readingStartDate" name="readingStartDate">
+
+                    <label for="readingFinishDate">Término  da leitura:</label>
+                    <input type="date" id="readingFinishDate" name="readingFinishDate">
+
+                    <label for="feedback">Feedback:</label>
+                    <input type="text" id="feedback">
+
+                    <label for="bookId">BookId:</label>
+                    <input type="text" id="bookId" name="bookId">
+
+                    <label for="groupId">GroupId:</label>
+                    <input type="text" id="groupId" name="groupId">
+
+                    
+                    <input type="submit" name="send" id="send" value="Enviar">
+
+                </form>
             </section>
         </main>
         <footer>
