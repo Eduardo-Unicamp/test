@@ -9,7 +9,20 @@ document.getElementById('reading-form').addEventListener('submit',async function
     const tokenTestLogin = plainObject.token;
     delete plainObject.token;
 
+    //convert currentPage to integer 
+    for(let key in plainObject){
+        if(plainObject[key]==""){
+            plainObject[key]==null;
+        }
+        else if(key=="currentPage" && plainObject[key]!=null){
+            plainObject[key]=parseInt(plainObject[key],10);//base 10
+        }
+
+    }
+
+
     const jsonString = JSON.stringify(plainObject);
+    console.log(jsonString);
 
     try{
             const response = await fetch('https://bookat-readings-manager.onrender.com/readings-manager',
@@ -24,9 +37,9 @@ document.getElementById('reading-form').addEventListener('submit',async function
                 }
             );
             if(response.ok){
-                const responseData = await response.json();
-                console.log('Success:', responseData);
-                alert('Data sent successfully!');
+                
+                console.log('Success: codigo', response.status);
+   
             }else {
                 console.error('Server returned an error:', response.status);
                 // Se o token for inválido, o Spring Boot geralmente retorna 401 (Unauthorized) ou 403 (Forbidden)
