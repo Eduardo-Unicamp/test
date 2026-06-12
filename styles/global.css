@@ -13,6 +13,8 @@
     --menu-gradient:linear-gradient(320deg,#a38e649f, #1e3f63ec,#1b3a5b);
   
     --send-button-gradient:linear-gradient(-30deg, #345d88ec,#1b3a5b);
+    --hover-send-button-gradient:linear-gradient(-30deg, hsla(211, 44%, 51%, 0.82),#1b3a5b);
+    
 }
 
 body{
@@ -190,7 +192,13 @@ main{
     color:var(--bg-light);
     font-size: large;
     background: var(--send-button-gradient);    
+    cursor: pointer;
 }
+.form-section .form-send-button input:hover{
+    background: var(--hover-send-button-gradient);
+}
+
+
 .readings-form>div{
     text-transform: uppercase;
     

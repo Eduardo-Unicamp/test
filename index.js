@@ -1,10 +1,12 @@
-document.getElementById('reading-form').addEventListener('submit',async function (event) {
+let form = document.getElementById('readings-form');
+
+form.addEventListener('submit',async function (event) {
     event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
 
     const plainObject = Object.fromEntries(formData.entries());
-
+    
     //token
     const tokenTestLogin = plainObject.token;
     delete plainObject.token;
@@ -12,7 +14,7 @@ document.getElementById('reading-form').addEventListener('submit',async function
     //convert currentPage to integer 
     for(let key in plainObject){
         if(plainObject[key]==""){
-            plainObject[key]==null;
+            plainObject[key]=null;
         }
         else if(key=="currentPage" && plainObject[key]!=null){
             plainObject[key]=parseInt(plainObject[key],10);//base 10
