@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <script type="module" src="index.js" defer></script>
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="topbar">
+                <div class="left-topbar">
+                    <h1 id="title">Login</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="login" class="form-section">
+            <div>
+                <h2 class="title">Entrar</h2>
+            </div>
+            <form id="login-form" class="readings-form" name="login-form">
+                <div>
+                    <label for="username">Username:</label>
+                    <input id="username" name="username" type="text" placeholder="usuário">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input id="password" name="password" type="password" placeholder="senha">
+                </div>
+                <div class="form-send-button">
+                    <input type="submit" value="Entrar" id="sendFormBtn">
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

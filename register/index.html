@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js" defer ></script>
+</head>
+<body>
+    <main>
+        <section id="register" class="form-section">
+            <div>
+                <h2 class="title">Cadastro</h2>
+            </div>
+            <form id="registerForm" class="readings-form" name="register-form">
+
+                <div>
+                    <label for="role">Debbug Role:</label>
+                    <input id="role" name="role" type="text">
+                </div>
+
+
+                <div>
+                    <label for="surname">Primeiro Nome:</label>
+                    <input id="name" name="name" type="text">
+                </div>
+                <div>
+                    <label for="name"> Sobrenomes:</label>
+                    <input id="surname" name="surname" type="text" >
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email" placeholder="exemplo@gmail.com">
+                </div>
+                 <div>
+                    <label for="username">Usuário:</label>
+                    <input id="username" name="username" type="text" placeholder="username123">
+                </div>
+                <div>
+                    <label for="password">Password:</label><!--adicionar evento no campo no js pra verficar senha forte-->
+                    <input id="password" name="password" type="password" placeholder="">
+                </div>
+                <div class="form-send-button">
+                    <input type="submit" value="Entrar" id="sendFormBtn">
+                </div>
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>

@@ -99,6 +99,10 @@ header{
     border-radius: 10px;
     width: 4rem;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .topbar .profile-options{
     display: flex;
 

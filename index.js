@@ -8,8 +8,8 @@ form.addEventListener('submit',async function (event) {
     const plainObject = Object.fromEntries(formData.entries());
     
     //token
-    const tokenTestLogin = plainObject.token;
-    delete plainObject.token;
+    const authToken = getTokenCookie();
+    delete plainObject.token;//depois mudar o html pra tirar o campo de token e apagar essa linha
 
     //convert currentPage to integer 
     for(let key in plainObject){
@@ -33,7 +33,7 @@ form.addEventListener('submit',async function (event) {
                     headers:{
                         'Content-Type':'application/json',
                         //token login
-                        'Authorization':`Bearer ${tokenTestLogin}`
+                        'Authorization':`Bearer ${authToken}`
                     },
                     body:jsonString
                 }
@@ -57,3 +57,11 @@ form.addEventListener('submit',async function (event) {
     }
     
 })
+
+
+function getTokenCookie(){
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const cArray = decodedCookie.split("; ")[0].split("=");
+        const token = cArray[1];
+        return token;
+    }
